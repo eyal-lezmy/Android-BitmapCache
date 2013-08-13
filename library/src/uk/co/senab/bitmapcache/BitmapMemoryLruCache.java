@@ -27,7 +27,7 @@ final class BitmapMemoryLruCache extends LruCache<String, CacheableBitmapDrawabl
 	}
 
 	CacheableBitmapDrawable put(CacheableBitmapDrawable value) {
-		if (null != value) {
+		if (null != value && value.getUrl() != null) {
 			value.setCached(true);
 			return put(value.getUrl(), value);
 		}
